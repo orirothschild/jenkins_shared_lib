@@ -1,6 +1,6 @@
 def call(gradle_action,distname) {
-   echo "Running ${build} with"
-    sh "./gradlew ${build} --no-daemon"
+   echo "Running ${gradle_action} with"
+    sh "./gradlew ${gradle_action} --no-daemon"
     archiveArtifacts artifacts: "dist/${distname}"
     return "success"
 }
