@@ -5,3 +5,4 @@ def call(gradle_action,distname) {
     archiveArtifacts artifacts: "dist/${distname}"
     return "success"
 }
+\
