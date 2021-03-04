@@ -8,7 +8,7 @@ def call(gradle_action,distname,path) {
     sh "./gradlew ${gradle_action} --no-daemon"
     path = remove_backslash(path);
         archiveArtifacts artifacts
-        : "${path}/${distname}", followSymlinks: false
+        :"${path}/${distname}", followSymlinks: false
     }
 }
 
