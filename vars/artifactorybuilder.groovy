@@ -4,9 +4,9 @@ def call(gradle_action,distname,path) {
         error 'Variable path is wrongly is not defined'
     }
     echo "Running ${gradle_action} with"
-    sh "mkdir -p ${path}"
     sh "./gradlew ${gradle_action} --no-daemon"
     path = remove_backslash(path);
+    sh "mkdir -p ${path}"
     archiveArtifacts artifacts:"${path}/${distname}"
 }
 
