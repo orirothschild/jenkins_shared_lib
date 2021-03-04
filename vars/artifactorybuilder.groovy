@@ -6,8 +6,8 @@ def call(gradle_action,distname,path) {
     echo "Running ${gradle_action} with"
     sh "mkdir -p ${path}"
     sh "./gradlew ${gradle_action} --no-daemon"
-    path = remove_backslash(path);
-        archiveArtifacts artifacts:"${path}/${distname}"
+    //path = remove_backslash(path);
+    archiveArtifacts artifacts:"${path}/${distname}"
 }
 
 def remove_backslash(path) {
