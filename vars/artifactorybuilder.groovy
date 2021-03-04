@@ -11,7 +11,7 @@ def call(gradle_action,distname,path) {
 }
 
 def remove_backslash(path) {
-    while(path.endWith("/")) {
+    while(path.endsWith("/")) {
         path = path.substring(0, path.length() - 1)
     }
     return path
